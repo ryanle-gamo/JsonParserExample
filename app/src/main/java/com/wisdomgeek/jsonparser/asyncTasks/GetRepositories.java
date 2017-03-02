@@ -43,12 +43,14 @@ public class GetRepositories extends AsyncTask<Void, Void, List<HashMap<String, 
                 JSONArray repositories = new JSONArray(httpResponse);
                 for (int i = 0; i < repositories.length(); i++) {
                     JSONObject repository = repositories.getJSONObject(i);
-                    String name = repository.getString("name");
-                    String description = repository.getString("description");
-                    HashMap<String, String> repo = new HashMap<>();
-                    repo.put("name", name);
-                    repo.put("description", description);
-                    result.add(repo);
+                    if(repository != null) {
+                        String name = repository.getString("name");
+                        String description = repository.getString("description");
+                        HashMap<String, String> repo = new HashMap<>();
+                        repo.put("name", name);
+                        repo.put("description", description);
+                        result.add(repo);
+                    }
                 }
             } catch (JSONException e) {
                 Log.e(TAG, "Json parsing error: " + e.getMessage());
