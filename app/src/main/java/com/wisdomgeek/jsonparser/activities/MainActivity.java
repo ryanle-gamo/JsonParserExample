@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Created by saranshkataria on 11/02/17.
- * For details about the post refer to http://www.wisdomgeek.com
+ * For details about the post refer to https://wisdomgeek.com/android/json-parsing-in-android-tutorial/
  */
 
 public class MainActivity extends AppCompatActivity implements AsyncCallback {
